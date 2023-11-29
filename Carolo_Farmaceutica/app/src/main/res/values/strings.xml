@@ -42,4 +42,8 @@
     <string name="quantidade">Quantidade</string>
     <string name="categoria">Categoria</string>
     <string name="iva">IVA</string>
+    <string name="despesas">Despesas</string>
+    <string name="medicamentos">Medicamentos</string>
+    <string name="receita_medica">Receita Médica</string>
+    <string name="btn_registar">Registar</string>
 </resources>
