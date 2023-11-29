@@ -156,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="18dp"
+
         android:backgroundTint="@color/green"
         android:src="@drawable/ic_action_back" />
 </RelativeLayout>

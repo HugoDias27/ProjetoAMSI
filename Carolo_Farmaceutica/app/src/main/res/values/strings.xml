@@ -30,6 +30,9 @@
     <string name="numero_utente">Número de utente</string>
     <string name="nif">Nif</string>
     <string name="morada">Morada</string>
+    <string name="buttondesconto">Aplicar</string>
+    <string name="desconto">Desconto</string>
+    <string name="padraoNumero">1</string>
     <string name="estabelecimento">Estabelecimento</string>
     <string name="descricao">Descrição</string>
     <string name="data_da_despesa">Data da despesa</string>
