@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Carolo_Farmaceutica</string>
+    <string name="txt_username">Introduza o seu username</string>
+    <string name="txt_email">Introduza o seu email</string>
+    <string name="txt_pass">Introduza a password</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_registar">Registar</string>
+    <string name="txt_credenciais_submit">Por favor preencha as suas credenciais</string>
+    <string name="txt_registo_hint">Não tem conta? Registe-se aqui</string>
+</resources>
