@@ -147,7 +147,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/green"         
+        android:backgroundTint="@color/green"
         android:src="@drawable/ic_action_adicionar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
