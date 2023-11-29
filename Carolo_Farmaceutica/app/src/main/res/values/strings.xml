@@ -30,4 +30,13 @@
     <string name="numero_utente">Número de utente</string>
     <string name="nif">Nif</string>
     <string name="morada">Morada</string>
+    <string name="estabelecimento">Estabelecimento</string>
+    <string name="descricao">Descrição</string>
+    <string name="data_da_despesa">Data da despesa</string>
+    <string name="preco">Preço</string>
+    <string name="nome">Nome</string>
+    <string name="prescicao_medica">Prescrição Médica</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="categoria">Categoria</string>
+    <string name="iva">IVA</string>
 </resources>
