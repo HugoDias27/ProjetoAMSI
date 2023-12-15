@@ -46,4 +46,6 @@
     <string name="medicamentos">Medicamentos</string>
     <string name="receita_medica">Receita Médica</string>
     <string name="btn_registar">Registar</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

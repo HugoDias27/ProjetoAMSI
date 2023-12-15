@@ -8,26 +8,41 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.LoginListener;
+import pt.ipleiria.estg.dei.carolo_farmaceutica.modelo.SingletonGestorFarmacia;
+import pt.ipleiria.estg.dei.carolo_farmaceutica.modelo.User;
+
+public class LoginActivity extends AppCompatActivity implements LoginListener {
 
     //declaração
-    public static final String EMAIL = "email";
     private EditText etUsername, etPassword;
-    private final int MIN_PASS = 4;
+
+    public static final String USERNAME = "USERNAME";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("Login");
-        onClickRegistar();
-
+        SingletonGestorFarmacia.getInstance(getApplicationContext()).setLoginListener(this);
 
         //inicialização
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
-        etUsername.setText("teste@teste.pt");
-        etPassword.setText("12345678");
+    }
+
+    public void onClickLogin(View view) {
+
+        String username=etUsername.getText().toString();
+        String password=etPassword.getText().toString();
+        Intent intent=new Intent(getApplicationContext(), MenuMainActivty.class);
+        intent.putExtra(USERNAME, username);
+        startActivity(intent);
+        finish();
+        SingletonGestorFarmacia.getInstance(getApplicationContext()).login(username, password, getApplicationContext());
     }
 
     public void onClickRegistar() {
@@ -40,5 +55,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onRefreshLogin(String token) {
+        if(token!=null){
+            Intent intent = new Intent(getApplicationContext(), MenuMainActivty.class);
+            startActivity(intent);
+        }
     }
 }
