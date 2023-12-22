@@ -2,6 +2,7 @@ package pt.ipleiria.estg.dei.carolo_farmaceutica;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,8 @@ public class DetalhesMedicamentoActivity extends AppCompatActivity implements Ca
     private EditText etQuantidadeCarrinho;
     private Medicamento medicamento;
     private FloatingActionButton fabAdicionarProdutoCarrinho;
+    public static final String USERNAME = "USERNAME";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +76,11 @@ public class DetalhesMedicamentoActivity extends AppCompatActivity implements Ca
     @Override
     public void onRefreshCarrinho(boolean resposta) {
         if (resposta) {
+            SharedPreferences preferences = getSharedPreferences("LOGIN", Context.MODE_PRIVATE);
+            String username = preferences.getString("USERNAME", "");
             Toast.makeText(this, "Produto adicionado ao carrinho com sucesso!.", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), MenuMainActivity.class);
+            intent.putExtra(USERNAME, username);
             startActivity(intent);
             finish();
         }

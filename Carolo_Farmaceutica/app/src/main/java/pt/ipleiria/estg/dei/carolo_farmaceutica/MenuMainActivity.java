@@ -62,7 +62,6 @@ public class MenuMainActivity extends AppCompatActivity implements NavigationVie
         fragmentManager = getSupportFragmentManager();
         carregarFragmentoInicial();
 
-
     }
 
       private void openSettingsFragment() {
