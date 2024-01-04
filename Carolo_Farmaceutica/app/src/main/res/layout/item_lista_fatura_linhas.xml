@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutDetalhes"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
     <ImageView
-        android:id="@+id/imgProduto"
+        android:id="@+id/imgProdutoFatura"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
@@ -26,14 +27,32 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvnomeMedicamento"
+                android:text="@string/txt_nome_do_produto"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvNome"
+                android:id="@+id/tvNomeProduto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantidade"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQuantidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -47,11 +66,11 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_prescricao"
+                android:text="@string/txt_preco_unitario"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvPrescricao"
+                android:id="@+id/tvPrecoUnitario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -65,11 +84,11 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvpreco"
+                android:text="@string/iva"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvPreco"
+                android:id="@+id/tvIVA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -83,11 +102,11 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvquantidade"
+                android:text="@string/txt_valor_com_iva"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvQuantidade"
+                android:id="@+id/tvValorComIVA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -100,28 +119,11 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvcategoria"
+                android:text="@string/txt_subtotal"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvCategoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tviva"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvIVA"
+                android:id="@+id/tvSubTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

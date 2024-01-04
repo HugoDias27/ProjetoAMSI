@@ -5,13 +5,13 @@
     android:layout_margin="5dp">
 
     <ImageView
-        android:id="@+id/imgProduto"
+        android:id="@+id/imgFatura"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
 
-        android:src="@drawable/medicamento_stock"
-        android:contentDescription="@string/imagem_medicamento" />
+        android:src="@drawable/ic_action_fatura"
+        android:contentDescription="@string/txt_imagem_fatura" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -26,14 +26,32 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_nr_fatura"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvNumeroFatura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvnomeMedicamento"
+                android:text="@string/data_fatura"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvNome"
+                android:id="@+id/tvDataFatura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -47,11 +65,11 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_prescricao"
+                android:text="@string/txt_valor_total"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvPrescricao"
+                android:id="@+id/tvValorTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -65,59 +83,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvpreco"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvPreco"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvquantidade"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvQuantidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvcategoria"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvCategoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tviva"
+                android:text="@string/iva"
                 android:textStyle="bold"/>
 
             <TextView
