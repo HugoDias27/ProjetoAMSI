@@ -29,6 +29,7 @@ import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.FaturaListener;
 import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.LinhaCarrinhoListener;
 import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.LoginListener;
 import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.MedicamentosListener;
+import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.QuantidadeListener;
 import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.ReceitaMedicaListener;
 import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.RegistarListener;
 import pt.ipleiria.estg.dei.carolo_farmaceutica.listeners.SubtotalListener;
@@ -69,6 +70,7 @@ public class SingletonGestorFarmacia {
     private FaturaListener faturaListener;
     private FaturaCarrinhoListener faturaCarrinhoListener;
     private SubtotalListener subtotalListener;
+    private QuantidadeListener quantidadeListener;
     private String ipAddress;
     private String mURLAPIMedicamentos;
     private String mURLAPILogin;
@@ -167,6 +169,10 @@ public class SingletonGestorFarmacia {
 
     public void setSubtotalListener(SubtotalListener subtotalListener) {
         this.subtotalListener = subtotalListener;
+    }
+
+    public void setQuantidadeListener(QuantidadeListener quantidadeListener) {
+        this.quantidadeListener = quantidadeListener;
     }
 
     public Medicamento getMedicamento(int id) {
@@ -510,7 +516,7 @@ public class SingletonGestorFarmacia {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(context, "Erro ao atualizar a quantidade do produto.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Não pode colocar mais quantidade no produto escolhido!", Toast.LENGTH_SHORT).show();
                 }
             }) {
                 @Override
@@ -562,17 +568,10 @@ public class SingletonGestorFarmacia {
                 @Override
                 public void onResponse(String response) {
                     try {
-                        int[] quantidades = LinhaCarrinhoJsonParser.parserJsonQuantidadeProduto(response);
-
-                        int quantidadeProduto = quantidades[0];
-                        int quantidadeLinha = quantidades[1];
-
-                        SharedPreferences sharedAuthKey = context.getSharedPreferences("QUANTIDADE_PRODUTO", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedAuthKey.edit();
-                        editor.putInt("quantidade", quantidadeProduto);
-                        editor.putInt("quantidadelinha", quantidadeLinha);
-                        editor.apply();
-
+                        double[] quantidades = LinhaCarrinhoJsonParser.parserJsonQuantidadeProduto(response);
+                        if (quantidadeListener != null) {
+                            quantidadeListener.onRefreshQuantidade(quantidades);
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                         Toast.makeText(context, "Erro ao processar a resposta JSON", Toast.LENGTH_SHORT).show();

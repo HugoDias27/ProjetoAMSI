@@ -59,12 +59,13 @@ public class LinhaCarrinhoJsonParser {
         return linhasCarrinho;
     }
 
-    public static int[] parserJsonQuantidadeProduto(String response) {
-        int[] quantidades = new int[2];
+    public static double[] parserJsonQuantidadeProduto(String response) {
+        double[] quantidades = new double[3];
         try {
             JSONObject quantidadeProdutoJson = new JSONObject(response);
-            quantidades[0] = quantidadeProdutoJson.getInt("quantidade");
-            quantidades[1] = quantidadeProdutoJson.getInt("quantidadelinha");
+            quantidades[0] = quantidadeProdutoJson.getDouble("quantidade");
+            quantidades[1] = quantidadeProdutoJson.getDouble("quantidadelinha");
+            quantidades[2] = quantidadeProdutoJson.getDouble("preco");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
